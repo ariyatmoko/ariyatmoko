@@ -1,40 +1,38 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html>
 <html>
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 6.4.1.2 (Linux)"/>
-	<meta name="author" content="Feri Ariyatmoko"/>
-	<meta name="created" content="2020-03-28T11:35:53.980021230"/>
-	<meta name="changedby" content="Feri Ariyatmoko"/>
-	<meta name="changed" content="2020-03-28T11:40:38.158276043"/>
-	<style type="text/css">
-		@page { size: 21cm 29.7cm; margin: 2cm }
-		p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }
-		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
-		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt; font-weight: bold }
-		h1.cjk { font-family: "Noto Sans CJK SC"; font-size: 18pt; font-weight: bold }
-		h1.ctl { font-family: "Noto Sans"; font-size: 18pt; font-weight: bold }
-		a:link { color: #000080; so-language: zxx; text-decoration: underline }
-		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
-	</style>
-</head>
-<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" align="center">
-KOOMII</h1>
-<p align="center"><br/>
-<br/>
+<script src="angular.min.js"></script>
+<script src="angular-route.js"></script>
 
-</p>
-<p align="center" style="margin-bottom: 0cm; line-height: 100%"><br/>
+<body ng-app="myApp">
 
-</p>
-<p align="center" style="margin-bottom: 0cm; line-height: 100%">Tes
-testes</p>
-<p align="center" style="margin-bottom: 0cm; line-height: 100%">kshff</p>
-<p align="center" style="margin-bottom: 0cm; line-height: 100%"><br/>
+<p><a href="#/!">Main</a></p>
 
-</p>
-<p align="center" style="margin-bottom: 0cm; line-height: 100%"><img src="004.jpg"/>
-</p>
+<a href="#!red">Red</a>
+<a href="#!green">Green</a>
+<a href="#!blue">Blue</a>
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "main.htm"
+    })
+    .when("/red", {
+        templateUrl : "red.htm"
+    })
+    .when("/green", {
+        templateUrl : "green.htm"
+    })
+    .when("/blue", {
+        templateUrl : "blue.htm"
+    });
+});
+</script>
+
+<p>Click on the links to navigate to "red.htm", "green.htm", "blue.htm", or back to "main.htm"</p>
 </body>
 </html>
+
